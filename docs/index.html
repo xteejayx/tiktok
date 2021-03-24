@@ -1,0 +1,106 @@
+
+<html>
+    <head>
+        <title>TikTok Counter</title>
+        <script src="jquery-3.1.1.min.js"></script>
+        <script src="odometer.js"></script>
+        <link rel="stylesheet" href="odometer-theme-minimal.css">
+    </head>
+
+
+ <style>
+    body {
+    background-color: rgb(255, 255, 255);
+
+} 
+
+    body { font: 10px Comic Sans Black, cursive; color: #333; }
+
+}
+
+ </style>
+
+
+
+    <body>
+       <center>
+            <h1 style="font-size: 10vh; font-weight: 800">TikTok Counter</h1>
+    
+            <h1 style="color:#ff0080">TikTok</h1>
+    
+            <h1><a href=https://www.tiktok.com/@charlidamelio>@charlidamelio</a></h1>
+            <div class='odometer odometer-auto-theme' id="tiktok" style="color: rgb(0, 0, 0); font-size: 10vh; background-color: transparent"></div>
+
+            <h1><a href=https://www.tiktok.com/@dixiedamelio>@dixiedamelio</a></h1>
+            <div class='odometer odometer-auto-theme' id="tiktok2" style="color: rgb(0, 0, 0); font-size: 10vh; background-color: transparent"></div>
+
+            <h1><a href=https://www.tiktok.com/@ssnowing>@ssnowing</a></h1>
+            <div class='odometer odometer-auto-theme' id="tiktok3" style="color: rgb(0, 0, 0); font-size: 10vh; background-color: transparent"></div>
+        <center>
+    
+    
+        <script>
+            
+           const youtubeKey ='AIzaSyAFyXqPvngns5qXpTIvbWwlg3othUc8KME';
+           const subcount = document.getElementById('subcount');
+           const subcount1 = document.getElementById('subcount1')
+           const subcount2 = document.getElementById('subcount2')
+           const subcount3 = document.getElementById('subcount3')
+           const twitter = document.getElementById('twitter')
+           const twitch = document.getElementById('twitch')
+           const tiktok = document.getElementById('tiktok')
+    
+        //TikTok
+            $(document).ready(function() {
+               function loadchannel(name){
+                   var url=`https://livecounts.space/api2_priv/tiktok_api/charlidamelio`
+                   $.getJSON(url,function(data1){
+                       tiktok.innerHTML=data1.followerCount
+                   })
+               }
+    
+               setInterval(function(){
+                   var url=`https://livecounts.space/api2_priv/tiktok_api/charlidamelio`
+                   $.getJSON(url,function(data1){
+                       tiktok.innerHTML=data1.followerCount
+                   })
+                   
+               }, 4000);
+           })
+        //TikTok 2
+            $(document).ready(function() {
+               function loadchannel(name){
+                   var url=`https://livecounts.space/api2_priv/tiktok_api/dixiedamelio`
+                   $.getJSON(url,function(data2){
+                       tiktok2.innerHTML=data2.followerCount
+                   })
+               }
+    
+               setInterval(function(){
+                   var url=`https://livecounts.space/api2_priv/tiktok_api/dixiedamelio`
+                   $.getJSON(url,function(data2){
+                       tiktok2.innerHTML=data2.followerCount
+                   })
+                   
+               }, 4000);
+           })
+        //TikTok 3
+            $(document).ready(function() {
+               function loadchannel(name){
+                   var url=`https://livecounts.space/api2_priv/tiktok_api/ssnowing`
+                   $.getJSON(url,function(data2){
+                       tiktok3.innerHTML=data2.followerCount
+                   })
+               }
+    
+               setInterval(function(){
+                   var url=`https://livecounts.space/api2_priv/tiktok_api/ssnowing`
+                   $.getJSON(url,function(data2){
+                       tiktok3.innerHTML=data2.followerCount
+                   })
+                   
+               }, 4000);
+           })
+        </script>
+    </html>
+    
